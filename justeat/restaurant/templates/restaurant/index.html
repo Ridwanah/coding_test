@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant Data</title>
+    </head>
+    <body>
+        <h1>Restaurants Closest to You</h1>
+        <form id="postcodeForm" method="GET">
+            {% csrf_token %}
+            <label for="postcode">What is your Postcode?</label><br>
+            <input type="text" id="postcode" name="postcode"><br>
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            document.getElementById('postcodeForm').addEventListener('submit', function(event){
+                event.preventDefault();
+                const postcode = document.getElementById('postcode').value.trim();
+                window.location.href = `/restaurant_list/${postcode}/`;
+            });
+        </script>
+    </body>
+</html>
