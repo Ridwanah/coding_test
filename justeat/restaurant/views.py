@@ -24,5 +24,8 @@ class PostcodeView(APIView):
                 'address' : restaurant.get('address'),
             }
             restaurant_data.append(values)
-        return Response(restaurant_data)
+        return render(request, 'restaurant/list.html', {
+            'postcode' : cleaned_postcode,
+            'restaurants' : restaurant_data,
+        })
             
