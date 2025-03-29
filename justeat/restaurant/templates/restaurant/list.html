@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'restaurant/style.css' %}">
     <head>
         <title>Restaurant List</title>
     </head>
     <body>
         <h1>Restaurants Near {{ postcode }}</h1>
-        <ul>
+        <ul class="restaurant-list">
         {% for restaurant in restaurants %}
-            <li>
-                <p>{{ restaurant.name }}</p><br>
+            <li class="restaurant-card">
+                <div class="restaurant-name">{{ restaurant.name }}</div><br>
                 <p>Cuisines: {{ restaurant.cuisines }}</p><br>
-                <p>Rating: {{ restaurant.rating }}</p><br>
-                <p>Address: {{ restaurant.address }}</p><br>
+                <p>Rating: {{ restaurant.rating.starRating }}</p><br>
+                <p>Address: {{ restaurant.address.firstLine }}, {{ restaurant.address.city }}, {{ restaurant.address.postalCode }}</p><br>
             </li>
+        {% empty %}
+            <p>{{ postcode }} is not a valid UK postcode.</p>
         {% endfor %}
         </ul>
 
