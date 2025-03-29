@@ -20,7 +20,7 @@ class PostcodeView(APIView):
             values = {
                 'name' : restaurant.get('name'),
                 'cuisines' : restaurant.get('cuisines'),
-                'rating' : (restaurant.get('rating')).get('starRating'),
+                'rating' : restaurant.get('rating'),
                 'address' : restaurant.get('address'),
             }
             restaurant_data.append(values)
