@@ -7,18 +7,23 @@
     </head>
     <body>
         <h1>Restaurants Near {{ postcode }}</h1>
-        <ul class="restaurant-list">
-        {% for restaurant in restaurants %}
-            <li class="restaurant-card">
-                <div class="restaurant-name">{{ restaurant.name }}</div><br>
-                <p>Cuisines: {{ restaurant.cuisines }}</p><br>
-                <p>Rating: {{ restaurant.rating.starRating }}</p><br>
-                <p>Address: {{ restaurant.address.firstLine }}, {{ restaurant.address.city }}, {{ restaurant.address.postalCode }}</p><br>
-            </li>
-        {% empty %}
-            <p>{{ postcode }} is not a valid UK postcode.</p>
-        {% endfor %}
-        </ul>
-
+        {% if restaurants %}
+            <ul class="restaurant-list">
+            {% for restaurant in restaurants %}
+                <li class="restaurant-card">
+                    <div class="restaurant-name">{{ restaurant.name }}</div>
+                    <div class="rating">★ {{ restaurant.rating.starRating }} ({{ restaurant.rating.count }} reviews) </div>
+                    <div class="cuisine-list">
+                        {% for cuisine in restaurant.cuisines %}
+                            <div class="cuisine-name">{{ cuisine.name }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="restaurant-address">{{ restaurant.address.firstLine }}, {{ restaurant.address.city }}, {{ restaurant.address.postalCode }}</div><br>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+        <p>{{ postcode }} is not a valid UK postcode.</p>
+        {% endif %}
     </body>
 </html>
