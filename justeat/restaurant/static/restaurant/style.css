@@ -23,12 +23,45 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.restaurant-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    background-color:  rgba(246, 232, 162, 0.98);
 }
 
 .restaurant-name {
     color: #ee4c10b9;
     font-weight: bold;
-    font-size: medium;
+    font-size: large;
     margin-bottom: 10px;
     text-align: center;
+}
+
+.restaurant-address {
+    color: rgb(128, 128, 128);
+    font-style: italic;
+}
+
+.cuisine-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px;
+}
+
+.cuisine-name {
+    background-color: #FF8033;
+    color: white;
+    font-size: small;
+    border-radius: 15px;
+    padding: 4px 10px;
+}
+
+.rating {
+    color: black;
+    text-align: center;
+    font-size: small;
 }
