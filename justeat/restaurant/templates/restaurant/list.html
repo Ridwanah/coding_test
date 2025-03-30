@@ -3,6 +3,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'restaurant/style.css' %}">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Restaurant List</title>
     </head>
     <body>
@@ -23,7 +24,9 @@
             {% endfor %}
             </ul>
         {% else %}
-        <p>{{ postcode }} is not a valid UK postcode.</p>
+        <div class="empty-card">
+            <div class="empty">{{ postcode }} is not a valid UK postcode. <a href="{% url 'index' %}">Try again?</a> </div>
+        </div>
         {% endif %}
     </body>
 </html>

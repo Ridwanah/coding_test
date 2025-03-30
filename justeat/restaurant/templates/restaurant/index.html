@@ -3,15 +3,16 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'restaurant/style.css' %}">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Restaurant Data</title>
     </head>
     <body>
-        <h1>Restaurants Closest to You</h1>
+        <h1>Find a Restaurant Near You</h1>
         <div class="postcode-form">
             <form id="postcodeForm" method="GET">
                 {% csrf_token %}
-                <label for="postcode">Enter your Postcode:</label><br>
-                <input type="text" id="postcode" name="postcode"><br>
+                <label for="postcode">Enter a valid UK postcode:</label><br>
+                <input type="text" id="postcode" name="postcode" required pattern="^[A-Za-z0-9]+(?:[ ]?[A-Za-z0-9 ]+)*$"><br>
                 <input type="submit" value="Submit">
             </form>
         </div>
