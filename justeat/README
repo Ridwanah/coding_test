@@ -1,0 +1,34 @@
+Setup Instructions:
+* Terminal commands are inside ``.
+- The Python version used is 3.10 and I tested this on Mac terminal.
+1. Navigate to the folder 'justeat' in the terminal.
+  `cd justeat`.
+2. Install the necessary dependencies.
+  `pip install -r requirements.txt`.
+3. Run the development server. 
+  `python manage.py runserver`.
+4. Open the project in browser:
+   http://127.0.0.1:8000/ 
+
+Assumptions:
+- The restaurants given in the Just Eat API response
+  were a list of the closest Just Eat affiliated restaurants to
+  the given postcode. 
+- For the sake of simpilicy, I labed the restaurants list as
+  'Restaurants Near {$postcode}'.
+- 'Rating - as a number' refers to the star rating. In the UI
+  I added '({rating.count} reviews)' to make the UI look less empty and to add context to the star rating.
+- I considered all items under 'cusines' as a cuisine tag even
+  if it is a non-food category like "Deals".
+- The API produces values for every valid UK postcode.
+
+
+Improvements:
+- I would allow filtering of results based on the cuisine tags,
+  like 'Indian' or 'Deals'.
+- I would allow ordering of results based on the rating or 
+  distance to the given postcode.
+- I would allow for the user to load more results at the end
+  of the list page if they wanted to see more restaurants.
+- I would implement more comprehensive testing for different
+  possible postcode inputs.
