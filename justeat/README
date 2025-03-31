@@ -32,3 +32,4 @@ Improvements:
   of the list page if they wanted to see more restaurants.
 - I would implement more comprehensive testing for different
   possible postcode inputs.
+- I would add more error handling for different possible errors.
