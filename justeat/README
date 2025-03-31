@@ -2,7 +2,6 @@ Setup Instructions:
 * Terminal commands are inside ``.
 - The Python version used is 3.10 and I tested this on Mac terminal.
 1. Navigate to the folder 'justeat' in the terminal.
-  `cd justeat`.
 2. Install the necessary dependencies.
   `pip install -r requirements.txt`.
 3. Run the development server. 
