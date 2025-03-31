@@ -17,6 +17,7 @@
             </form>
         </div>
         <script>
+            // Redirects user to a URL using their inputted postcode.
             document.getElementById('postcodeForm').addEventListener('submit', function(event){
                 event.preventDefault();
                 const postcode = document.getElementById('postcode').value.trim();
